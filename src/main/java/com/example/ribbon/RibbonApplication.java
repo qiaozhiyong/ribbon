@@ -30,7 +30,8 @@ public class RibbonApplication {
 
     @RequestMapping("/hello")
     public String hello(String name){
-        String result=restTemplate.getForObject("http://HELLOSERVICE/hello?name="+name,String.class);
+        //服务名不区分大小写
+        String result=restTemplate.getForObject("http://helloservice/hello?name="+name,String.class);
         return result;
 
     }
